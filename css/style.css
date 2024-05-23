@@ -8,6 +8,7 @@
 }
 
 html{
+    scroll-behavior: smooth;
     user-select: none;
     background-color: darkgray;
 }
@@ -88,42 +89,60 @@ a {
 }
 
 .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: inherit;
     width: 100%;
     height: 150px;
     background-color: #1e90ff;
     display: flex;
     align-items: center;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 10px;
 }
 
 .dropdown {
     position: relative;
     height: 100%;
+    display: flex;
+    align-items: center;
+    list-style: none;
 
+}
+
+.dropdown li {
+    height: 100%;
+    margin-left: 10px;
 }
 
 .dropdownBTN {
     position: relative;
     width: var(--btnW);
+    height: 100%;
     background-color: transparent;
-    font-size: 200%;
+    font-size: 125%;
     color: white;
-    top: calc(50% - 22px);
-    border-radius: 16px;
-    border-color: blue;
+    border: none;
+}
+
+.dropdownBTN:hover {
+    background-color: blue;
 }
 
 .dropdown-content {
+    display: flex;
+    padding: 0;
+    flex-direction: column;
     width: var(--btnW);
     background-color: greenyellow;
     position: absolute;
     top: 100%;
-    height: 150px;
     transform-origin: top center;
+}
+
+.dropdown-content a {
+    margin-top: 5px;
+}
+
+.dropdown-content a:hover{
+    color: red;
 }
 
 .dropdown-content.show {
@@ -138,8 +157,8 @@ a {
     animation: growUp 150ms ease-in-out forwards;
 }
 
-.logo{
-    position: fixed;
+.logo {
+    position: static;
     width: 200px;
     height: 200px;
     left: calc(50% - 100px);
@@ -154,6 +173,14 @@ a {
     left: calc(50% - 100px);
 }
 
+.loadingLogo {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    left: calc(50% - 100px);
+    top: calc(50% - 260px);
+}
+
 .loadingDiv {
     position: fixed;
     top: 0;
@@ -165,21 +192,55 @@ a {
 }
 
 .loadingDiv.hidden {
-    animation: fadeOut 20ms ease-in;
+    animation: fadeOut 150ms ease-in-out forwards;
     display: none;
+}
+
+#loadingBar {
+    position: absolute;
+    top: calc(50% + 40px);
+    width: 0%;
+    height: 30px;
+    background-color: #1e90ff;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+
+#overlay {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 3;
+    cursor: pointer;
+}
+
+.window {
+    overflow: auto;
+    background-color: #fefefe;
+    margin: 7% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
 }
 
 /*------------------------------- KeyFrames ------------------------------------*/
 
 @keyframes growDown {
     0% {
-        transform: scaleY(0)
+        transform: scaleY(0);
     }
     80% {
-        transform: scaleY(1.1)
+        transform: scaleY(1.1);
     }
     100% {
-        transform: scaleY(1)
+        transform: scaleY(1);
     }
 }
 
@@ -194,14 +255,5 @@ a {
 
     0% {
         transform: scaleY(1);
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 100;
-    }
-    100% {
-        opacity: 0;
     }
 }

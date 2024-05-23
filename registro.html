@@ -1,37 +1,61 @@
 <!DOCTYPE html>
 <html lang="it_IT">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>!Did-up Famiglia 2.0 - Registro</title>
-        <meta name="description" content="Sto cercando di modernizzare il Registro Elettronico Did-up Famiglia">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="icon" href="imgs/favicon.png">
-        <script src="scripts/dropdownHandler.js"></script>
-        <script src="scripts/windowHandler.js"></script>
-        <script src="scripts/loading.js"></script>
-    </head>
-    <body>
-        <div class="bg">
-            <img src="imgs/bg1.png">
-        </div>
-        <div class="loadingDiv" id="loadingDiv">
-            <img class="logo" src="imgs/logo.png">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>!Did-up Famiglia 2.0 - Registro</title>
+    <meta name="description" content="Sto cercando di modernizzare il Registro Elettronico Did-up Famiglia">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="imgs/favicon.png">
+    <script src="scripts/loading.js"></script>
+</head>
+
+<body>
+    <img class="bg" src="imgs/bg1.png">
+    <div class="loadingDiv" id="loadingDiv">
+        <div class="loading">
+            <img class="loadingLogo" src="imgs/logo.png">
             <img id="loading" class="loading" src="imgs/loading.svg" alt="">
+            <div id="loadingBar">0%</div>
         </div>
-        <nav class="nav">
-                <img class="fullLogo" src="imgs/fullLogo.png" alt="">
-            <ul class="dropdown">
-                <button id="dropdownBTN" class="dropdownBTN">Lollo</button>
+    </div>
+    <nav class="nav">
+        <img class="fullLogo" src="imgs/fullLogo.png" alt="">
+        <ul class="dropdown">
+            <li id="Servizi Alunno">
+                <button id="dropdownBTN" class="dropdownBTN">Servizi Alunno</button>
+                <ul id="dropdown-content" class="dropdown-content hidden">
+                    <a href="#">Assenze/Ritardi/Uscite</a>
+                    <a href="#">Voti</a>
+                    <a href="#">Note</a>
+                    <a href="#">Tasse</a>
+                    <a href="#">Curriculum</a>
+                    <a href="#">Richiesta Certificati</a>
+                </ul>
+            </li>
+            <li id="Servizi Classe">
+                <button id="dropdownBTN" class="dropdownBTN">Servizi Classe</button>
                 <div id="dropdown-content" class="dropdown-content hidden">
-                    <a href="#">Lol</a>
+                    <a href="#">Compiti Assegnati</a>
+                    <a href="#">Attività Svolte</a>
+                    <a href="#">Promemoria di Classe</a>
+                    <a href="#">Eletti ai Consigli</a>
+                    <a href="#">Docenti</a>
                 </div>
-            </ul>
-        </nav>
-        <div style="display: none;" class="window" id="windowUser">
-            
+            </li>
+        </ul>
+    </nav>
+    <div style="display: none;" id="overlay">
+        <div class="window" id="windowUser">
+            <h1>Hallo World!</h1>
         </div>
-        <a style="position: absolute; bottom: 1px;" href="index.html">AAAAAAAAAAAAAAAAAAAAA</a>
-    </body>
+    </div>
+    <a style="position: absolute; bottom: 1px;" href="index.html">AAAAAAAAAAAAAAAAAAAAA</a>
+    <br>
+    <script src="scripts/dropdownHandler.js"></script>
+    <script src="scripts/windowHandler.js"></script>
+</body>
+
 </html>

@@ -1,45 +1,55 @@
 var liAlunno = document.getElementById('Servizi Alunno');
 var liClasse = document.getElementById('Servizi Classe');
+var liDocumenti = document.getElementById('Documenti');
 var downAlunno = liAlunno.children[1];
 var downClasse = liClasse.children[1];
+var downDocumenti = liDocumenti.children[1];
 
 
 liAlunno.children[0].addEventListener('click', () => {
-    if (downAlunno.classList.contains('show')) {
-        downAlunno.classList.add('hidden');
-        downAlunno.classList.remove('show');
+    if (downClasse.classList.contains('show') || downDocumenti.classList.contains('show')) {
+        downClasse.classList.replace('show', 'hidden');
+        downDocumenti.classList.replace('show', 'hidden');
 
-    } else if (downAlunno.classList.contains('hidden')) {
-        if (downClasse.classList.contains('show')) {
-            downClasse.classList.add('hidden');
-            downClasse.classList.remove('show');
-            downAlunno.classList.remove('hidden');
-            downAlunno.classList.add('show');
+    }
 
-        } else {
-            downAlunno.classList.remove('hidden');
-            downAlunno.classList.add('show');
+    if (downAlunno.classList.contains('hidden')) {
+        downAlunno.classList.replace('hidden', 'show');
 
-        }
+    } else {
+        downAlunno.classList.replace('show', 'hidden');
+
     }
 });
 
 liClasse.children[0].addEventListener('click', () => {
-    if (downClasse.classList.contains('show')) {
-        downClasse.classList.add('hidden');
-        downClasse.classList.remove('show');
+    if (downAlunno.classList.contains('show') || downDocumenti.classList.contains('show')) {
+        downAlunno.classList.replace('show', 'hidden');
+        downDocumenti.classList.replace('show', 'hidden');
 
-    } else if (downClasse.classList.contains('hidden')) {
-        if (downAlunno.classList.contains('show')) {
-            downAlunno.classList.add('hidden');
-            downAlunno.classList.remove('show');
-            downClasse.classList.remove('hidden');
-            downClasse.classList.add('show');
+    }
 
-        } else {
-            downClasse.classList.remove('hidden');
-            downClasse.classList.add('show');
+    if (downClasse.classList.contains('hidden')) {
+        downClasse.classList.replace('hidden', 'show');
 
-        }
+    } else {
+        downClasse.classList.replace('show', 'hidden');
+
     }
 });
+
+liDocumenti.children[0].addEventListener('click', () => {
+    if (downAlunno.classList.contains('show') || downClasse.classList.contains('show')) {
+        downAlunno.classList.replace('show', 'hidden');
+        downClasse.classList.replace('show', 'hidden');
+
+    }
+
+    if (downDocumenti.classList.contains('show')) {
+        downDocumenti.classList.replace('show', 'hidden');
+
+    } else {
+        downDocumenti.classList.replace('hidden', 'show');
+
+    }
+})

@@ -131,14 +131,22 @@ a {
     padding: 0;
     flex-direction: column;
     width: var(--btnW);
-    background-color: greenyellow;
     position: absolute;
     top: 100%;
     transform-origin: top center;
 }
 
-.dropdown-content a {
+.dropdown-content button {
+    font-family: system-ui;
+    font-size: 80%;
+    text-align: center;
     margin-top: 5px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #1E90FF;
+    color: white;
 }
 
 .dropdown-content a:hover{
@@ -209,7 +217,6 @@ a {
 
 #overlay {
     position: fixed;
-    display: block;
     width: 100%;
     height: 100%;
     top: 0;
@@ -222,12 +229,19 @@ a {
 }
 
 .window {
+    position: relative;
+    top: -90px;
+    z-index: 4;
     overflow: auto;
     background-color: #fefefe;
-    margin: 7% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    margin: auto;
+}
+
+.hidden {
+    display: none;
 }
 
 /*------------------------------- KeyFrames ------------------------------------*/

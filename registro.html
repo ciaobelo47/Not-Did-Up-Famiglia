@@ -14,7 +14,7 @@
 
 <body>
     <img class="bg" src="imgs/bg1.png">
-    <div class="loadingDiv" id="loadingDiv">
+    <div class="loadingDiv hidden" id="loadingDiv">
         <div class="loading">
             <img class="loadingLogo" src="imgs/logo.png">
             <img id="loading" class="loading" src="imgs/loading.svg" alt="">
@@ -27,30 +27,40 @@
             <li id="Servizi Alunno">
                 <button id="dropdownBTN" class="dropdownBTN">Servizi Alunno</button>
                 <ul id="dropdown-content" class="dropdown-content hidden">
-                    <a href="#">Assenze/Ritardi/Uscite</a>
-                    <a href="#">Voti</a>
-                    <a href="#">Note</a>
-                    <a href="#">Tasse</a>
-                    <a href="#">Curriculum</a>
-                    <a href="#">Richiesta Certificati</a>
+                    <button>Assenze/Ritardi/Uscite</button>
+                    <button>Voti</button>
+                    <button>Note</button>
+                    <button>Tasse</button>
+                    <button>Curriculum</button>
+                    <button>Richiesta Certificati</button>
                 </ul>
             </li>
             <li id="Servizi Classe">
                 <button id="dropdownBTN" class="dropdownBTN">Servizi Classe</button>
                 <div id="dropdown-content" class="dropdown-content hidden">
-                    <a href="#">Compiti Assegnati</a>
-                    <a href="#">Attività Svolte</a>
-                    <a href="#">Promemoria di Classe</a>
-                    <a href="#">Eletti ai Consigli</a>
-                    <a href="#">Docenti</a>
+                    <button>Compiti Assegnati</button>
+                    <button>Attività Svolte</button>
+                    <button>Promemoria di Classe</button>
+                    <button>Eletti ai Consigli</button>
+                    <button>Docenti</button>
+                </div>
+            </li>
+            <li id="Documenti">
+                <button id="drowpdownBTN" class="dropdownBTN">Documenti</button>
+                <div id="dropdown-content" class="dropdown-content hidden">
+                    <button>Bacheca</button>
+                    <button>Documenti con i docenti</button>
+                    <button>Pagella</button>
                 </div>
             </li>
         </ul>
     </nav>
-    <div style="display: none;" id="overlay">
-        <div class="window" id="windowUser">
-            <h1>Hallo World!</h1>
-        </div>
+    <div class="hidden" id="overlay"></div>
+    <div class="window hidden" id="windowAlunno">
+        <h1>Hallo Alunno!</h1>
+    </div>
+    <div class="window hidden" id="windowClasse">
+        <h1>Hallo Classe!</h1>
     </div>
     <a style="position: absolute; bottom: 1px;" href="index.html">AAAAAAAAAAAAAAAAAAAAA</a>
     <br>

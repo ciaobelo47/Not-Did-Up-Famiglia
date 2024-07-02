@@ -1,4 +1,5 @@
 var i = 0;
+var nav = window.navigator();
 
 window.onload = () => {
     if (i == 0) {
@@ -19,4 +20,5 @@ window.onload = () => {
             }
         }
     }
+    nav.vibrate(1000);
 }

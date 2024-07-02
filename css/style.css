@@ -1,5 +1,9 @@
 :root {
-    --btnW: 150px;
+    --maxBtnW: 150px;
+}
+
+@media screen and (min-width: 950px) {
+    
 }
 
 @font-face {
@@ -84,8 +88,9 @@ a {
 .fullLogo {
     position: relative;
     left: 25px;
-    height: 75%;
-    width: 300px;
+    width: 50%;
+    max-width: 300px;
+    max-height: 90%;
 }
 
 .nav {
@@ -114,7 +119,7 @@ a {
 
 .dropdownBTN {
     position: relative;
-    width: var(--btnW);
+    max-width: var(--maxBtnW);
     height: 100%;
     background-color: transparent;
     font-size: 125%;

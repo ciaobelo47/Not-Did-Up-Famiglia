@@ -126,7 +126,6 @@ a {
 
 .dropdownBTN:hover {
     background-color: blue;
-    border-radius: 5px;
 }
 
 .dropdown-content {
@@ -285,5 +284,9 @@ a {
 
     .dropdown {
         flex-direction: column;
+    }
+
+    .dropdownBTN:hover {
+        border-radius: 5px;
     }
 }

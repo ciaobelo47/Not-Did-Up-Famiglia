@@ -1,5 +1,5 @@
 var i = 0;
-var nav = window.navigator();
+var nav = window.navigator;
 
 window.onload = () => {
     if (i == 0) {

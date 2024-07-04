@@ -10,18 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="imgs/favicon.png">
     <script src="scripts/loading.js"></script>
-</head>
-
-<body>
-    <img class="bg" src="imgs/bg1.png">
-    <div class="loadingDiv hidden" id="loadingDiv">
-        <div class="loading">
-            <img class="loadingLogo" src="imgs/logo.png">
-            <img id="loading" class="loading" src="imgs/loading.svg" alt="">
-            <div id="loadingBar">0%</div>
-        </div>
-    </div>
-    <nav id="nav" class="nav">
+    <header id="nav" class="nav">
         <img class="fullLogo" src="imgs/fullLogo.png" alt="">
         <ul id="dropdowns" class="dropdown">
             <li id="Servizi Alunno">
@@ -54,11 +43,21 @@
                 </div>
             </li>
         </ul>
-    </nav>
-    <div class="hidden" id="overlay"></div>
-    <div class="window hidden" id="windowAlunno">
-        <h1>Hallo Alunno!</h1>
-        <iframe src="alunno.html" frameborder="0"></iframe>
+    </header>
+</head>
+
+<body>
+    <img class="bg" src="imgs/bg1.png">
+    <div class="loadingDiv hidden" id="loadingDiv">
+        <div class="loading">
+            <img class="loadingLogo" src="imgs/logo.png">
+            <img id="loading" class="loading" src="imgs/loading.svg" alt="">
+            <div id="loadingBar">0%</div>
+        </div>
+    </div>
+    <div class="" id="overlay"></div>
+    <div class="window" id="windowAlunno">
+        <iframe onload="resizeIFrame(this)" src="alunno.html"></iframe>
     </div>
     <div class="window hidden" id="windowClasse">
         <h1>Hallo Classe!</h1>
@@ -68,6 +67,11 @@
     <script src="scripts/dropdownHandler.js"></script>
     <script src="scripts/windowHandler.js"></script>
     <script src="scripts/test.js"></script>
+    <script>
+        function resizeIFrame(obj) {
+            obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+        }
+    </script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it_IT">
+<html lang="it">
 
 <head>
     <meta charset="utf-8">
@@ -10,8 +10,23 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="imgs/favicon.png">
     <script src="scripts/loading.js"></script>
+</head>
+
+<body>
+    <img class="bg" src="imgs/bg1.png">
+
+    <div class="loadingDiv hidden" id="loadingDiv">
+        <div class="loading">
+            <img class="loadingLogo" src="imgs/logo.png">
+            <img id="loading" class="loading" src="imgs/loading.svg" alt="">
+            <div id="loadingBar">0%</div>
+        </div>
+    </div>
+
     <header id="nav" class="nav">
-        <img class="fullLogo" src="imgs/fullLogo.png" alt="">
+        <a href="index.html">
+            <img class="fullLogo" src="imgs/fullLogo.png" alt="">
+        </a>
         <ul id="dropdowns" class="dropdown">
             <li id="Servizi Alunno">
                 <button id="dropdownBTN" class="dropdownBTN">Servizi Alunno</button>
@@ -44,34 +59,25 @@
             </li>
         </ul>
     </header>
-</head>
 
-<body>
-    <img class="bg" src="imgs/bg1.png">
-    <div class="loadingDiv hidden" id="loadingDiv">
-        <div class="loading">
-            <img class="loadingLogo" src="imgs/logo.png">
-            <img id="loading" class="loading" src="imgs/loading.svg" alt="">
-            <div id="loadingBar">0%</div>
-        </div>
-    </div>
-    <div class="" id="overlay"></div>
+    <div id="overlay"></div>
     <div class="window" id="windowAlunno">
-        <iframe onload="resizeIFrame(this)" src="alunno.html"></iframe>
+        <iframe scrolling="no" src="alunno.html"></iframe>
     </div>
     <div class="window hidden" id="windowClasse">
         <h1>Hallo Classe!</h1>
     </div>
     <a style="position: absolute; bottom: 1px;" href="index.html">AAAAAAAAAAAAAAAAAAAAA</a>
     <br>
+
     <script src="scripts/dropdownHandler.js"></script>
     <script src="scripts/windowHandler.js"></script>
     <script src="scripts/test.js"></script>
     <script>
         function resizeIFrame(obj) {
-            obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+            obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+            console.info("[IFrame Resizer] The new height of the iframe is " + obj.style.height)
         }
     </script>
 </body>
-
 </html>

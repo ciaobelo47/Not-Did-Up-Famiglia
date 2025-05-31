@@ -1,12 +1,21 @@
 :root {
-    --btnW: 150px;
+    --btnW: 10vw;
 }
 
-html{
+@font-face {
+    font-family: "Posterama1901";
+    src: url(fonts/Posterama1901-Black.ttf);
+}
+
+@font-face {
+    font-family: "FuturaNDMediumOblique";
+    src: url(fonts/FuturaNDMediumOblique.ttf);
+}
+
+html {
     scroll-behavior: smooth;
     user-select: none;
-    background-color: darkgray;
-    font-family: sans-serif;
+    font-family: "FuturaNDMediumOblique";
 }
 
 a {
@@ -20,18 +29,14 @@ iframe {
     border-radius: 5px;
 }
 
-.bg {
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    position: fixed;
-    z-index: -1;
+img {
+    user-select: none;
 }
 
-.bg img {
-    width: 100%;
-    height: 100%;
+button {
+    font-family: "FuturaNDMediumOblique";
+    font-size: 100%;
+    cursor: pointer;
 }
 
 .login {
@@ -43,6 +48,7 @@ iframe {
     left: calc(50% - 300px);
     top: calc(50% - 300px);
     background-color: aquamarine;
+    box-shadow: 2px 2px 10px black;
     text-align: center;
     align-items: center;
     border-radius: 10px;
@@ -77,17 +83,17 @@ iframe {
     top: 5px;
 }
 
-.logo{
+.logo {
     width: 35%;
     height: 35%;
 }
 
 .fullLogo {
     position: relative;
-    left: 25px;
-    width: 50%;
-    max-width: 300px;
+    left: 2%;
+    max-width: 20%;
     max-height: 90%;
+    cursor: pointer;
 }
 
 .nav {
@@ -98,15 +104,17 @@ iframe {
     display: flex;
     align-items: center;
     border-radius: 10px;
+    box-shadow: 2px 2px 10px black;
 }
 
 .dropdown {
     position: relative;
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     list-style: none;
-
+    flex-direction: row;
 }
 
 .dropdown li {
@@ -148,6 +156,7 @@ iframe {
     padding: 2px;
     background-color: #1E90FF;
     color: white;
+    box-shadow: 2px 2px 10px black;
 }
 
 .dropdown-content a:hover{
@@ -205,30 +214,6 @@ iframe {
     display: none;
 }
 
-#loadingBar {
-    position: absolute;
-    top: calc(50% + 40px);
-    width: 0%;
-    height: 30px;
-    background-color: #1e90ff;
-    text-align: center;
-    line-height: 30px;
-    color: white;
-}
-
-#overlay {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 3;
-    cursor: pointer;
-}
-
 .window {
     position: fixed;
     top: 7%;
@@ -245,6 +230,44 @@ iframe {
 
 .hidden {
     display: none;
+}
+
+.anagraficaLi {
+    display: flex;
+    background-color: lime;
+    border-radius: inherit;
+}
+
+.anagrafica {
+    color: white;
+    width: 70%;
+    margin-left: 3%;
+    align-self: center;
+    text-align: center;
+}
+
+.person {
+    position: relative;
+    max-width: 20%;
+}
+
+.istitutoLi {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: salmon;
+    width: 35%;
+}
+
+#loadingBar {
+    position: absolute;
+    top: calc(50% + 40px);
+    width: 0%;
+    height: 30px;
+    background-color: #1e90ff;
+    text-align: center;
+    line-height: 30px;
+    color: white;
 }
 
 /*------------------------------- KeyFrames ------------------------------------*/

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" style="background-image: url(imgs/bg1.png);">
 
 <head>
     <meta charset="utf-8">
@@ -13,25 +13,21 @@
 </head>
 
 <body>
-    <img class="bg" src="imgs/bg1.png">
-
-    <div class="loadingDiv hidden" id="loadingDiv">
+    <div class="loadingDiv" id="loadingDiv">
         <div class="loading">
-            <img class="loadingLogo" src="imgs/logo.png">
-            <img id="loading" class="loading" src="imgs/loading.svg" alt="">
+            <img draggable="false" class="loadingLogo" src="imgs/logo.png">
+            <img draggable="false" id="loading" class="loading" src="imgs/loading.svg" alt="">
             <div id="loadingBar">0%</div>
         </div>
     </div>
 
     <header id="nav" class="nav">
-        <a href="index.html">
-            <img class="fullLogo" src="imgs/fullLogo.png" alt="">
-        </a>
+        <img draggable="false" class="fullLogo" src="imgs/fullLogo.png" onclick="index()">
         <ul id="dropdowns" class="dropdown">
             <li id="Servizi Alunno">
                 <button id="dropdownBTN" class="dropdownBTN">Servizi Alunno</button>
                 <ul id="dropdown-content" class="dropdown-content hidden">
-                    <button>Assenze/Ritardi/Uscite</button>
+                    <button>Presenza</button>
                     <button>Voti</button>
                     <button>Note</button>
                     <button>Tasse</button>
@@ -57,26 +53,30 @@
                     <button>Pagella</button>
                 </div>
             </li>
+            <li class="istitutoLi" style="margin-left: auto;">
+                <img draggable="false" src="imgs/itiLogo.png" style="height: 70%; align-self: center; border-radius: 50%;">
+                <span class="anagrafica">
+                    ITIS "G. MARCONI" PONTEDERA
+                    <hr>
+                    NXX INDRIZZO (CODICE INDRIZZO)
+                </span>
+            </li>
+            <li class="anagraficaLi" style="margin-left: 0;">
+                <button class="dropdownBTN">
+                    <span class="anagrafica">Milo Di Puorto</span>
+                    <img draggable="false" class="person" src="imgs/person.svg" style="cursor: auto;">
+                </button>
+            </li>
         </ul>
     </header>
 
-    <div id="overlay"></div>
-    <div class="window" id="windowAlunno">
-        <iframe scrolling="no" src="alunno.html"></iframe>
-    </div>
-    <div class="window hidden" id="windowClasse">
-        <h1>Hallo Classe!</h1>
-    </div>
     <a style="position: absolute; bottom: 1px;" href="index.html">AAAAAAAAAAAAAAAAAAAAA</a>
     <br>
 
     <script src="scripts/dropdownHandler.js"></script>
-    <script src="scripts/windowHandler.js"></script>
-    <script src="scripts/test.js"></script>
     <script>
-        function resizeIFrame(obj) {
-            obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-            console.info("[IFrame Resizer] The new height of the iframe is " + obj.style.height)
+        function index() {
+            window.location.replace("index.html")
         }
     </script>
 </body>

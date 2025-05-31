@@ -6,10 +6,10 @@ window.onload = () => {
     pwButton.addEventListener('click', function() {
         if (pwInput.type === 'password'){
             pwInput.type = 'text'
-            pwImg.src = './imgs/not_show.png'
+            pwImg.src = './imgs/not_show.svg'
         } else {
             pwInput.type = 'password'
-            pwImg.src = './imgs/show.png'
+            pwImg.src = './imgs/show.svg'
         }
     })
     

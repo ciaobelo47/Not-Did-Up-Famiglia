@@ -1,21 +1,79 @@
 :root {
-    --btnW: 10vw;
+    --btnW: 8vw;
+
+    /* hsl (fallback color) */
+    --bg-dark: hsl(247 100% 6%);
+    --bg: hsl(237 100% 10%);
+    --bg-light: hsl(227 95% 13%);
+    --text: hsl(220 100% 100%);
+    --text-muted: hsl(220 78% 76%);
+    --highlight: hsl(223 67% 48%);
+    --border: hsl(224 86% 36%);
+    --border-muted: hsl(233 100% 27%);
+    --primary: hsl(221 100% 80%);
+    --secondary: hsl(46 100% 32%);
+    --danger: hsl(7 99% 66%);
+    --warning: hsl(53 100% 22%);
+    --success: hsl(163 100% 24%);
+    --info: hsl(217 100% 70%);
+    /* oklch */
+    --bg-dark: oklch(0.1 0.095 264);
+    --bg: oklch(0.15 0.095 264);
+    --bg-light: oklch(0.2 0.095 264);
+    --text: oklch(0.96 0.1 264);
+    --text-muted: oklch(0.76 0.1 264);
+    --highlight: oklch(0.5 0.19 264);
+    --border: oklch(0.4 0.19 264);
+    --border-muted: oklch(0.3 0.19 264);
+    --primary: oklch(0.76 0.19 264);
+    --secondary: oklch(0.76 0.19 84);
+    --danger: oklch(0.7 0.19 30);
+    --warning: oklch(0.7 0.19 100);
+    --success: oklch(0.7 0.19 160);
+    --info: oklch(0.7 0.19 260);
 }
 
-@font-face {
-    font-family: "Posterama1901";
-    src: url(fonts/Posterama1901-Black.ttf);
-}
-
-@font-face {
-    font-family: "FuturaNDMediumOblique";
-    src: url(fonts/FuturaNDMediumOblique.ttf);
+html.light {
+    /* hsl (fallback color) */
+    --bg-dark: hsl(220 100% 96%);
+    --bg: hsl(220 100% 100%);
+    --bg-light: hsl(220 100% 100%);
+    --text: hsl(260 100% 12%);
+    --text-muted: hsl(224 86% 36%);
+    --highlight: hsl(221 100% 100%);
+    --border: hsl(222 85% 60%);
+    --border-muted: hsl(221 100% 73%);
+    --primary: hsl(224 86% 36%);
+    --secondary: hsl(37 100% 13%);
+    --danger: hsl(5 86% 39%);
+    --warning: hsl(51 100% 12%);
+    --success: hsl(159 100% 10%);
+    --info: hsl(216 85% 43%);
+    /* oklch */
+    --bg-dark: oklch(0.92 0.095 264);
+    --bg: oklch(0.96 0.095 264);
+    --bg-light: oklch(1 0.095 264);
+    --text: oklch(0.15 0.19 264);
+    --text-muted: oklch(0.4 0.19 264);
+    --highlight: oklch(1 0.19 264);
+    --border: oklch(0.6 0.19 264);
+    --border-muted: oklch(0.7 0.19 264);
+    --primary: oklch(0.4 0.19 264);
+    --secondary: oklch(0.4 0.19 84);
+    --danger: oklch(0.5 0.19 30);
+    --warning: oklch(0.5 0.19 100);
+    --success: oklch(0.5 0.19 160);
+    --info: oklch(0.5 0.19 260);
 }
 
 html {
     scroll-behavior: smooth;
     user-select: none;
-    font-family: "FuturaNDMediumOblique";
+    font-family: system-ui;
+    color: var(--text);
+    background-color: var(--bg-dark);
+
+    transition: all 100ms;
 }
 
 a {
@@ -34,7 +92,7 @@ img {
 }
 
 button {
-    font-family: "FuturaNDMediumOblique";
+    font-family: inherit;
     font-size: 100%;
     cursor: pointer;
 }
@@ -47,7 +105,7 @@ button {
     height: 600px;
     left: calc(50% - 300px);
     top: calc(50% - 300px);
-    background-color: aquamarine;
+    background-color: var(--bg-light);
     box-shadow: 2px 2px 10px black;
     text-align: center;
     align-items: center;
@@ -75,12 +133,25 @@ button {
     height: 20px;
 }
 
+.passwordDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.passwordDiv input {
+    margin-left: 40px;
+}
+
 .showPW {
     position: relative;
-    background-color: transparent;
-    border: none;
+    top: 3px;
+    left: -43px;
+    aspect-ratio: 1/1;
     padding: 0;
-    top: 5px;
+    border: 0;
+    background-color: transparent;
 }
 
 .logo {
@@ -100,11 +171,17 @@ button {
     position: inherit;
     width: 100%;
     height: 120px;
-    background-color: #1e90ff;
+    background-color: var(--bg-light);
     display: flex;
     align-items: center;
     border-radius: 10px;
     box-shadow: 2px 2px 10px black;
+    opacity: 0;
+}
+
+.nav.navAppear {
+    transition: opacity 150ms 50ms;
+    opacity: 1;
 }
 
 .dropdown {
@@ -128,12 +205,12 @@ button {
     height: 100%;
     background-color: transparent;
     font-size: 125%;
-    color: white;
-    border: none;  
+    color: inherit;
+    border: none;
 }
 
 .dropdownBTN:hover {
-    background-color: blue;
+    background-color: var(--secondary);
 }
 
 .dropdown-content {
@@ -150,28 +227,27 @@ button {
     font-size: 80%;
     text-align: center;
     margin-top: 5px;
-    border-style: solid;
-    border-color: black;
+    border: 1px solid black;
     border-radius: 5px;
     padding: 2px;
-    background-color: #1E90FF;
-    color: white;
+    background-color: var(--bg-light);
+    color: inherit;
     box-shadow: 2px 2px 10px black;
 }
 
-.dropdown-content a:hover{
-    color: red;
+.dropdown-content button:hover {
+    background-color: var(--secondary);
 }
 
 .dropdown-content.show {
     animation: growDown 150ms ease-in-out forwards;
 }
 
-.notLoading{
+.notLoading {
     display: none;
 }
 
-.dropdown-content.hidden {
+.dropdown-content.hiddenBTN {
     animation: growUp 150ms ease-in-out forwards;
 }
 
@@ -209,9 +285,10 @@ button {
     background-color: darkgray;
 }
 
-.loadingDiv.hidden {
-    animation: fadeOut 150ms ease-in-out forwards;
-    display: none;
+.loadingDiv.hiddenLoading {
+    z-index: -104;
+    opacity: 0;
+    transition: opacity 150ms;
 }
 
 .window {
@@ -234,12 +311,13 @@ button {
 
 .anagraficaLi {
     display: flex;
-    background-color: lime;
-    border-radius: inherit;
+    background-color: transparent;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .anagrafica {
-    color: white;
+    color: var(--text);
     width: 70%;
     margin-left: 3%;
     align-self: center;
@@ -249,13 +327,14 @@ button {
 .person {
     position: relative;
     max-width: 20%;
+    fill: var(--text);
 }
 
 .istitutoLi {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: salmon;
+    background-color: var(--info);
     width: 35%;
 }
 
@@ -267,7 +346,7 @@ button {
     background-color: #1e90ff;
     text-align: center;
     line-height: 30px;
-    color: white;
+    color: inherit;
 }
 
 /*------------------------------- KeyFrames ------------------------------------*/
@@ -276,25 +355,27 @@ button {
     0% {
         transform: scaleY(0);
     }
+
     80% {
         transform: scaleY(1.1);
     }
+
     100% {
         transform: scaleY(1);
     }
 }
 
 @keyframes growUp {
-    100% {
-        transform: scaleY(0);
+    0% {
+        transform: scaleY(1);
     }
 
     80% {
-        transform: scaleY(1.1);
+        transform: scaleY(0.2);
     }
 
-    0% {
-        transform: scaleY(1);
+    100% {
+        transform: scaleY(0);
     }
 }
 

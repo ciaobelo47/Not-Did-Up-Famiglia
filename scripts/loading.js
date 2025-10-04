@@ -10,7 +10,8 @@ window.onload = () => {
         function frame() {
             if (width >= 100) {
                 clearInterval(id);
-                loadingDiv.classList.add('hidden');
+                loadingDiv.classList.add('hiddenLoading');
+                document.getElementById('nav').classList.add('navAppear');
                 i = 0;
             } else {
                 width++;

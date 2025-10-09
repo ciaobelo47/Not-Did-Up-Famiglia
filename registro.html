@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it" class="hml light">
+<html lang="it">
 
 <head>
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="loadingDiv" id="loadingDiv">
+    <div class="loadingDiv hiddenLoading" id="loadingDiv">
         <div class="loading">
             <img draggable="false" class="loadingLogo" src="imgs/logo.png">
             <img draggable="false" id="loading" class="loading" src="imgs/loading.svg" alt="">
@@ -20,12 +20,12 @@
         </div>
     </div>
 
-    <header id="nav" class="nav">
+    <header id="nav" class="nav navAppear">
         <img draggable="false" id="fullLogo" class="fullLogo" src="imgs/fullLogoDark.png" onclick="index()">
         <a id="69" style="display: none;" href="index.html"></a>
         <ul id="dropdowns" class="dropdown">
             <li id="Servizi Alunno">
-                <button class="dropdownBTN">Servizi Alunno</button>
+                <button class="dropdownBTN">👦 Servizi Alunno</button>
                 <div class="dropdown-content hiddenBTN">
                     <button>Presenza</button>
                     <button>Voti</button>
@@ -36,7 +36,7 @@
                 </div>
             </li>
             <li id="Servizi Classe">
-                <button class="dropdownBTN">Servizi Classe</button>
+                <button class="dropdownBTN">🏫 Servizi Classe</button>
                 <div class="dropdown-content hiddenBTN">
                     <button>Compiti Assegnati</button>
                     <button>Attività Svolte</button>
@@ -46,7 +46,7 @@
                 </div>
             </li>
             <li id="Documenti">
-                <button class="dropdownBTN">Documenti</button>
+                <button class="dropdownBTN">📃 Documenti</button>
                 <div class="dropdown-content hiddenBTN">
                     <button>Bacheca</button>
                     <button>Documenti con i docenti</button>
@@ -72,19 +72,28 @@
                     </svg>
                 </button>
                 <div class="dropdown-content hiddenBTN">
-                    <button id="darkModeToggle">Dark Mode: <b>OFF</b></button>
+                    <button id="darkModeToggle">Dark Mode: <b>ON</b></button>
+                    <button>Modifica Profilo</button>
+                    <button>Logout</button>
                 </div>
             </li>
         </ul>
     </header>
 
+    <main>
+        <iframe id="realIFrame" src="iframes/welcome.html" frameborder="0"></iframe>
+    </main>
+
     <a style="position: absolute; bottom: 1px;" href="index.html">AAAAAAAAAAAAAAAAAAAAA</a>
 
     <script src="scripts/dropdownHandler.js"></script>
     <script src="scripts/darkMode.js"></script>
+    <script src="scripts/iframeHandler.js"></script>
     <script>
         function index() {
-            document.getElementById('69').click();
+            if (confirm("u sure u quit?")) {
+                document.getElementById('69').click();
+            }
         }
     </script>
 </body>

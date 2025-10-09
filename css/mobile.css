@@ -1,0 +1,18 @@
+/*------------------------------- Media Queries ------------------------------------*/
+/*------------------------------- (da sostituire con mobile.css) ------------------------------------*/
+@media screen and (max-width: 638px) {
+    .nav {
+        background-color: goldenrod;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .dropdown {
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .dropdownBTN:hover {
+        border-radius: 5px;
+    }
+}

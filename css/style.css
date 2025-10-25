@@ -323,6 +323,16 @@ main {
     width: 35%;
 }
 
+.presenze {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.presenze p {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
 #loadingBar {
     position: absolute;
     top: calc(50% + 40px);

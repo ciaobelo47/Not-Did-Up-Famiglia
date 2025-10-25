@@ -1,14 +1,128 @@
 <!DOCTYPE html>
 <html lang="it" style="background-color: var(--bg-light);">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            text-align: center;
+        }
+
+        .grafici {
+            display: grid;
+            grid-template-rows: 10fr 1fr;
+            justify-items: center;
+            height: 100%;
+        }
+
+        .grafico {
+            max-height: 85vh;
+        }
+
+        .riassuntoPresenze {
+            display: grid;
+        }
+
+        .tabellaPresenze {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tabellaPresenze td,
+        th {
+            border: 1px solid var(--text);
+        }
+
+        .tabellaPresenze thead {
+            background-color: var(--secondary);
+        }
+
+        .tabellaPresenze td {
+            background-color: var(--bg-light);
+        }
+    </style>
 </head>
+
 <body>
     <!--Grafici e dati di presenza-->
 
-    <p>Presenza</p>
+    <div class="grafici">
+        <img class="grafico" src="../imgs/grafico.png" alt="">
+    </div>
+
+    <div class="elencoPresenza">
+        <div class="presenze">
+            <p>
+                <span>🕰️ Ritardi</span>
+                <b>0</b>
+            </p>
+            <p>
+                <span>❌ Assenze</span>
+                <b>0</b>
+            </p>
+            <p>
+                <span>🚪 Uscite</span>
+                <b>0</b>
+            </p>
+        </div>
+        <hr>
+        <form method="post" action="send_data.php">
+            <input class="dropdownBTN" style="width: 100%;" type="submit" name="submit" id="submit" value="GIUSTIFICA">
+
+            <hr>
+
+            <table class="tabellaPresenze">
+                <thead>
+                    <th>Tipo</th>
+                    <th>Data</th>
+                    <th>Ora</th>
+                    <th>Giustificata</th>
+                    <th>Giustifica?</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Assenza</td>
+                        <td>11/09/2025</td>
+                        <td>-</td>
+                        <td>✅</td>
+                        <td><input type="hidden"></td>
+                    </tr>
+                    <tr>
+                        <td>Assenza</td>
+                        <td>31/10/2025</td>
+                        <td>-</td>
+                        <td>❌</td>
+                        <td><input type="checkbox" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>Ritardo</td>
+                        <td>15/11/2025</td>
+                        <td>In 2 ora</td>
+                        <td>✅</td>
+                        <td><input type="hidden" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>Ritardo</td>
+                        <td>21/11/2025</td>
+                        <td>In 3 ora</td>
+                        <td>❌</td>
+                        <td><input type="checkbox" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>Uscita</td>
+                        <td>31/11/2025</td>
+                        <td>In 4 ora</td>
+                        <td>✅</td>
+                        <td><input type="hidden" name="" id=""></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
 </body>
+
 </html>
